@@ -1,7 +1,3 @@
-u/aj0413 suggested that I make a revision of 
-[this post](https://www.reddit.com/r/Bitwarden/comments/y6d588/making_bitwarden_backups_one_approach). When I went back
-to look at it, I decided it would be better if I just started over. Here's my updated version!
-
 # Introduction
 
 For new users of Bitwarden, we recommend creating 
@@ -182,11 +178,6 @@ of extra secrets that must STILL be held outside the cloud: the URL for the arch
 the 2FA secrets, and the 2FA recovery code. And of course there is still the encryption password, which also must be
 stored outside the cloud.
 
-Finally, it's not like your backup is going to be very large. My backup, which includes me, my wife, my brother-in-law,
-and a niece, totals to less than 80 megabytes. This is tiny! Amazon will sell you a 10-pack of 1Gb thumb drives
-for less than $20.
-
-Don't bother with online backups.  Invest instead in physical copies, offline, in secure locations.
 
 *Offline Storage*
 

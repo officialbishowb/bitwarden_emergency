@@ -113,14 +113,7 @@ This section is just a grab bag of things you may or may not have thought of.
 * *Website Logins* -- This is the one everyone thinks of first. It is an important use case. Every single one of your logins should have unique, complex, and randomly generated passwords. There are other things to consider here as well. We will talk about that later.
 * *Store warranty and serial numbers* -- Having the serial numbers for your important devices (like the service number of your Dell laptop) can be useful.
 * *Software license keys* -- Those pesky software license keys...they don't seem to be as common now as they were ten years ago, but I still have a few. What kind of secure stable storage can I use for those? Oh wait! My password manager is a good place for this.
-* *Passwords for other people* -- My wife is a really great person: intelligent, funny, but not particularly computer literate. I manage the backups and effectively operate as her system administrator. As such, I keep a few key secrets in my own vault, including her master password, PIN to her debit card, and a few other items for use in emergencies.
-
-My brother-in-law is similar. He is much more technically minded, but he is a medical professional; computers are only a passing part of his scope of knowledge. I manage all his backups and security.
-
-On another side of the family, I have a dear niece who...well, she struggles. After she lost her phone (and the blankity-blank useless Google Authenticator datastore), I stepped in and helped her upgrade her security. I am her fallback, and I manage her backups.
-
-* *Gate Passwords* -- My brother-in-law lives in a gated community; I store the gate password there. I have the door alarm code for a dear friend so that I can go in his house, collect his mail when he is on vacation, and the like.
-* Gym Locker -- That cheap MasterLock I use at the gym: it may not help me get my clothes back if I've been working out, but the vault entry will save me from having to pay someone to destroy the lock in order to get my wallet and phone back.
+* *Passwords for other people* 
 
 If you take inventory, I would bet that you too have a number of these kinds of secrets as well.
 
