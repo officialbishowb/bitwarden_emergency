@@ -13,10 +13,13 @@
 | Server | `https://vault.bitwarden.eu` or `https://vault.bitwarden.com` |
 | Login email | |
 | Master password | |
+| Export password | |
 | 2FA recovery code | |
 
 > **Note:** The 2FA recovery code does **not** replace the master password.
 > Both are required to regain access.
+
+> **Note:** The export password (Backup Passport) is required to decrypt the encrypted JSON export when importing into Bitwarden.
 
 ---
 
@@ -40,14 +43,18 @@
 | Ente Auth email | |
 | Ente Auth password | |
 | Ente Auth recovery key | |
+| Ente export password | |
 
 ---
 
 ## 4. Backup Encryption
 
+> USB drives are encrypted with VeraCrypt.
+> The VeraCrypt password below is required to mount them.
+
 | Field | Value |
 |-------|-------|
-| Backup password | |
+| VeraCrypt password | |
 | USB storage location 1 (home) | |
 | USB storage location 2 (offsite) | |
 
@@ -58,7 +65,12 @@
 | pCloud URL | `https://www.pcloud.com` |
 | Username / email | |
 | Password | |
-| 2FA recovery code | |
+| Backup-Codes |  |
+| Recovery-Codes |  |
+
+> **Note:** The **backup codes** allow access to the pCloud account if the 2FA method is unavailable. Each code can only be used once.
+
+> **Note:** The **recovery codes** allow account recovery if access is completely lost. Each code can only be used once.
 
 ---
 
@@ -92,9 +104,17 @@ A second Bitwarden account configured as emergency access:
 1. Open a browser and navigate to **vault.bitwarden.com** (or .eu)
 2. Log in with the **login email** and **master password** from Section 1
 3. Enter the 2FA code (Ente Auth app — see Section 8)
-4. If 2FA is unavailable: use the **2FA recovery code** from Section 1
 
-If vault access is completely lost (master password unknown):
+### If 2FA is unavailable
+
+If the Ente Auth app cannot be restored (see Section 8) and no 2FA code is available:
+
+1. On the Bitwarden login page, after entering email and password, click **"Lost your two-step login device?"**
+2. Enter the **2FA recovery code** from Section 1
+3. Warning: using the recovery code disables 2FA — set it up again afterwards!
+
+### If vault access is completely lost (master password unknown)
+
 - The vault can be deleted at [bitwarden.com/help/forgot-master-password](https://bitwarden.com/help/forgot-master-password/)
 - Then restore from backup (Section 9)
 
@@ -117,13 +137,15 @@ If vault access is completely lost (master password unknown):
 4. Enter the **Ente Auth recovery key** from Section 3 when prompted
 5. All 2FA codes will be restored — read the Bitwarden code as in the normal case
 
-### Last resort: Bitwarden 2FA recovery code
+### Last resort: restore from encrypted Ente Auth export
 
-If Ente Auth cannot be restored:
+If the Ente Auth password and recovery key are both unavailable:
 
-1. On the Bitwarden login page, after entering email and password, click **"Lost your two-step login device?"**
-2. Enter the **2FA recovery code** from Section 1
-3. Warning: using the recovery code disables 2FA — set it up again afterwards!
+1. Get the encrypted Ente Auth export file from the USB drive (see Section 9, Option A, steps 1–5)
+2. Reinstall **Ente Auth** (App Store or Google Play)
+3. Open the app and select **"Import"** → choose the export file
+4. Enter the **Ente export password** from Section 3 to decrypt the file
+5. All 2FA codes will be restored — read the Bitwarden code as in the normal case
 
 ---
 
@@ -134,9 +156,9 @@ If Ente Auth cannot be restored:
 1. Insert the USB drive (storage locations: see Section 4)
 2. Download and install **VeraCrypt**: [veracrypt.fr](https://www.veracrypt.fr)
 3. Open VeraCrypt → **"Mount Volume"** → select the USB drive
-4. Enter the **backup password** from Section 4
+4. Enter the **VeraCrypt password** from Section 4
 5. Open the mounted drive in Explorer — the backup file (`.json`) is inside
-6. Log into Bitwarden → **Settings → Import vault** → select the file
+6. Log into Bitwarden → **Settings → Import vault** → select the file → enter the **export password** from Section 1
 
 ### Option B: Cloud backup (pCloud)
 
@@ -144,4 +166,4 @@ If Ente Auth cannot be restored:
 2. Log in with the credentials from Section 4 (username and password)
 3. If 2FA is requested: use the **2FA recovery code** from Section 4
 4. Download the backup file (`.json`)
-5. Continue as in Option A from step 6 (VeraCrypt not needed — import the file directly)
+5. Log into Bitwarden → **Settings → Import vault** → select the file → enter the **export password** from Section 1 (VeraCrypt not needed)
