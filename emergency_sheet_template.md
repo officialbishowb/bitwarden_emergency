@@ -154,11 +154,18 @@ If the Ente Auth password and recovery key are both unavailable:
 ### Option A: USB drive (VeraCrypt)
 
 1. Insert the USB drive (storage locations: see Section 4)
+2. Windows might ask you to format the drive — **do not format it**!
 2. Download and install **VeraCrypt**: [veracrypt.fr](https://www.veracrypt.fr)
 3. Open VeraCrypt → **"Mount Volume"** → select the USB drive
-4. Enter the **VeraCrypt password** from Section 4
+4. Enter the **VeraCrypt password** from Section 4 and the PIM (if used) → click **OK**
 5. Open the mounted drive in Explorer — the backup file (`.json`) is inside
-6. Log into Bitwarden → **Settings → Import vault** → select the file → enter the **export password** from Section 1
+
+#### Bitwarden password import
+ Log into Bitwarden → **Settings → Import vault** → select the file → enter the **export password** from Section 1
+#### Ente Auth import
+1. Reinstall **Ente Auth** (App Store or Google Play)
+2. Open the app and select **"Import"** → choose the export file
+3. Enter the **Ente export password** from Section 3 to decrypt the file
 
 ### Option B: Cloud backup (pCloud)
 
